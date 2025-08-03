@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 20px;
+}
+
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  animation: slide 12s infinite ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Carousel animation */
+@keyframes slide {
+  0%, 20% { transform: translateX(0); }
+  25%, 45% { transform: translateX(-100%); }
+  50%, 70% { transform: translateX(-200%); }
+  75%, 100% { transform: translateX(0); }
+}
+
+/* Product Details */
+.product-details {
+  flex: 1;
+  max-width: 450px;
+}
+
+.product-details h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 24px;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.desc {
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Options */
+.options label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.size-options button {
+  margin: 5px;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.size-options button:hover {
+  background: #333;
+  color: white;
+}
+
+.color-options {
+  display: flex;
+  margin-top: 10px;
+}
+
+.color-circle {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #ccc;
+  transition: transform 0.3s;
+}
+
+.color-circle:hover {
+  transform: scale(1.2);
+}
+
+.red { background: red; }
+.blue { background: #3498db; }
+.black { background: #000; }
+
+/* Add to Cart */
+.add-to-cart {
+  margin-top: 30px;
+  padding: 14px 24px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.4s, transform 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #372fc2;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .carousel-container {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .carousel img {
+    height: auto;
+  }
+}
